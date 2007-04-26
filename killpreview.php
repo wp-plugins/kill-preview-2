@@ -4,7 +4,7 @@ Plugin Name: Kill Preview 2
 Plugin URI: http://www.jovelstefan.de/kill-preview/
 Description: Removes the post preview iframe from the post writing screen and adds a preview link.
 Author: Stefan He&szlig;
-Version: 2.0.1
+Version: 2.0.2b
 Author URI: http://www.jovelstefan.de
 License: GPL
 
@@ -17,16 +17,22 @@ if((strstr($_SERVER['REQUEST_URI'], 'wp-admin/post.php')) || (strstr($_SERVER['R
 
 function kill_preview($content)
 {
-	global $post;
+
+	preg_match("/<div[^>]*?id='preview'.*?<\/div>/mis", $content);
+
+	$tmp = preg_match("|http.*?true|", $content, $match);
+	$preview_link = $match[0];
 
 	$content = preg_replace("/<div[^>]*?id='preview'.*?<\/div>/mis", '', $content);
 
 	if ( 3664 <= $wp_db_version ) {
-		$content = preg_replace('/<a href="#preview-post">/mis', '<a href="' . add_query_arg('preview', 'true', get_permalink($post->ID)) . '" onclick="this.target=\'_blank\';">', $content);
+		$content = preg_replace('/<a href="#preview-post">/mis', '<a href="'.$preview_link.'" onclick="this.target=\'_blank\';">', $content);
 	} else {
-		$content = preg_replace('/<div id="moremeta">/', '<div id="moremeta"><a href="' . wp_specialchars(add_query_arg('preview', 'true', get_permalink($post->ID))) . '" onclick="this.target=\'_blank\';">Post Preview</a>', $content);
+		$content = preg_replace('/<div id="moremeta">/', '<div id="moremeta"><a href="'.$preview_link.'" onclick="this.target=\'_blank\';">Post Preview</a>', $content);
 	}
+
 	return $content;
+
 }
 
 ?>
