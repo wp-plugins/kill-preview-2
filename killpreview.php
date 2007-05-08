@@ -4,7 +4,7 @@ Plugin Name: Kill Preview 2
 Plugin URI: http://www.jovelstefan.de/kill-preview/
 Description: Removes the post preview iframe from the post writing screen and adds a preview link.
 Author: Stefan He&szlig;
-Version: 2.0.2b
+Version: 2.1
 Author URI: http://www.jovelstefan.de
 License: GPL
 

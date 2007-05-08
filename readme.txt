@@ -3,8 +3,8 @@ Contributors: jovelstefan
 Donate link: http://www.jovelstefan.de/kill-preview/
 Tags: write, edit, post, preview
 Requires at least: 2.0
-Tested up to: 2.1.2
-Stable tag: 2.0.1
+Tested up to: 2.1.3
+Stable tag: 2.1
 
 The plugin removes the slow-loading post preview iframe from the post/page writing screen and adds a preview link instead.
 
@@ -23,5 +23,4 @@ No configuration needed!
 
 == More ==
 
-There seems to be a problem with a blank screen for some users, when using the plugin together with the WP Cache plugin. Unfortunately there is no solution for this problem yet.
 For information about the use of this plugin visit the [plugin page](http://www.jovelstefan.de/kill-preview/)!
