@@ -10,6 +10,9 @@ The plugin removes the slow-loading post preview iframe from the post/page writi
 
 == Description ==
 
+Support and development is stopped!
+The functionality given by this plugin is built into WP versions from 2.2 anyway...
+
 The plugin removes the preview iframe and adds a preview link instead: The preview iframe in the post/page writing screen will be removed to load this page faster. Additionally there will be a link to the preview in the upper right corner of the screen, which opens a new window to the preview of the edited post/page.
 The plugin is based on the [Kill Preview plugin](http://redalt.com/Resources/Plugins/Kill+Preview) by Owen Winkler, that did not work with WordPress 2.1. This version does ;)
 
